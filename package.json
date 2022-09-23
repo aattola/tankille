@@ -7,6 +7,7 @@
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": "https://github.com/jeffeeeee/tankille",
+  "homepage": "https://jeffeeeee.github.io/tankille/",
   "license": "MIT",
   "keywords": [],
   "publishConfig": {
