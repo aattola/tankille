@@ -1,7 +1,6 @@
 import { sub } from 'date-fns';
 
 import { axios } from '../httpClient';
-
 import { Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
 
 class Client {
