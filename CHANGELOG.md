@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/jeffeeeee/tankille/compare/v1.1.2...v1.1.4) (2022-10-02)
+
+
+### Bug Fixes
+
+* homepage ([f8ef196](https://github.com/jeffeeeee/tankille/commit/f8ef196a688a6733906b004e030b83544f572631))
+* julkinen npm ([5cf8d90](https://github.com/jeffeeeee/tankille/commit/5cf8d900582bf6891c14a9faf4630d1dff8f7335))
+* **types:** login returnaa accessToken (string) ([5a94f34](https://github.com/jeffeeeee/tankille/commit/5a94f342554ef50b3d74daf729a7d20fd5310a4f))
+
 ### [1.1.2](https://github.com/jeffeeeee/tankille/compare/v1.1.1...v1.1.2) (2022-09-23)
 
 
