@@ -64,10 +64,50 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#tankille" id="tankille" style="color: inherit; text-decoration: none;">
-					<h1>tankille</h1>
+				<a href="#tankille-api" id="tankille-api" style="color: inherit; text-decoration: none;">
+					<h1>Tankille API</h1>
 				</a>
-				<p>tankille</p>
+				<a href="#tankille-applikaation-yksityinen-api-hienossa-ja-kivassa-npm-paketissa" id="tankille-applikaation-yksityinen-api-hienossa-ja-kivassa-npm-paketissa" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://www.tankille.fi/">Tankille</a> applikaation yksityinen api hienossa ja kivassa npm paketissa.</h4>
+				</a>
+				<a href="#asentaminen" id="asentaminen" style="color: inherit; text-decoration: none;">
+					<h3>Asentaminen:</h3>
+				</a>
+				<p>npm:</p>
+				<pre><code class="language-shell">npm i @jeffe/tankille
+</code></pre>
+				<p>yarn:</p>
+				<pre><code class="language-shell">yarn add @jeffe/tankille
+</code></pre>
+				<a href="#käyttäminen" id="käyttäminen" style="color: inherit; text-decoration: none;">
+					<h3>Käyttäminen:</h3>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { Client } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@jeffe/tankille&quot;</span>);
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client()
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">await</span> client.login({
+    <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;test@test.com&quot;</span>,
+    <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;testpass&quot;</span>
+  })
+
+  <span class="hljs-keyword">const</span> stations = <span class="hljs-keyword">await</span> client.getStations()
+
+  <span class="hljs-built_in">console</span>.log(stations)
+}
+
+run()
+</code></pre>
+				<a href="#kuinka-tätä-käyttää" id="kuinka-tätä-käyttää" style="color: inherit; text-decoration: none;">
+					<h3>Kuinka tätä käyttää:</h3>
+				</a>
+				<ul>
+					<li>Luet automaattisesti generoidut: <a href="https://jeffeeeee.github.io/tankille/classes/client.html">API dokumentaatiot</a></li>
+					<li>Luet <a href="https://github.com/jeffeeeee/tankille/tree/main/src">koodia</a> ja selvität itse</li>
+					<li>Parannat itse <a href="https://github.com/jeffeeeee/tankille/fork">koodaamalla ominaisuuksia</a></li>
+					<li>Kysymällä <a href="https://github.com/jeffeeeee/tankille/issues/new">apua</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
