@@ -2,7 +2,7 @@ import { sub } from 'date-fns';
 
 import { axios } from '../httpClient';
 
-import { Asema, ClientOptions, LoginOptions, RefreshToken } from './../types/client.d';
+import { Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
 
 class Client {
   private token = '';
@@ -111,7 +111,7 @@ class Client {
     return res.data;
   }
 
-  async login(loginOptions: LoginOptions): Promise<typeof this.token> {
+  async login(loginOptions: LoginOptions): Promise<string> {
     if (!loginOptions.email || !loginOptions.password)
       throw new Error('Unohdit sähköpostin tai salasanan');
 
