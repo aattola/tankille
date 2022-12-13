@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/jeffeeeee/tankille/compare/v1.1.4...v1.2.0) (2022-12-13)
+
+
+### Features
+
+* automaattinen authentikaation tarkistus ([878ee55](https://github.com/jeffeeeee/tankille/commit/878ee5573cc5df15d1a24f5a2af127a252a92aa9))
+
+
+### Bug Fixes
+
+* typet toimivat nyt ([cd2c628](https://github.com/jeffeeeee/tankille/commit/cd2c628cd40bfe8432bd439093226822d844d45c))
+
 ### [1.1.4](https://github.com/jeffeeeee/tankille/compare/v1.1.2...v1.1.4) (2022-10-02)
 
 
