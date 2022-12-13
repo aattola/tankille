@@ -44,3 +44,10 @@ export interface Asema {
   __v: number;
   updated: string;
 }
+
+export type AccessCache = {
+  data: {
+    accessToken: string;
+  };
+  lastFetch: number;
+};

@@ -1,10 +1,16 @@
 import { sub } from 'date-fns';
 
 import { axios } from '../httpClient';
-import { Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
+import { AccessCache, Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
 
 class Client {
   private token = '';
+  private refreshToken = '';
+
+  tokenCache: AccessCache = {
+    lastFetch: 0,
+    data: <any>{},
+  };
 
   private options: ClientOptions = {
     device: 'Android SDK built for x86_64 (03280ceb8a5367a6)',
@@ -29,6 +35,18 @@ class Client {
     this.getStations = this.getStations.bind(this);
   }
 
+  async #auth() {
+    if (!this.refreshToken) {
+      // TODO: relogin auto
+      console.log('TODO: autologin');
+      return;
+    }
+
+    this.token = await this.#getSessionToken({
+      refreshToken: this.refreshToken,
+    });
+  }
+
   async #getRefreshToken(loginOptions: LoginOptions): Promise<RefreshToken> {
     const response = await axios.post<RefreshToken>(
       '/auth/login',
@@ -43,6 +61,12 @@ class Client {
   }
 
   async #getSessionToken({ refreshToken }: RefreshToken): Promise<string> {
+    const timeSinceLastFetch = Date.now() - this.tokenCache.lastFetch;
+    // 10h cache accesstokenille (vanhenee 12 tunnissa)
+    if (timeSinceLastFetch <= 36000) {
+      return this.tokenCache.data.accessToken;
+    }
+
     const response = await axios.post<{ accessToken: string }>(
       '/auth/refresh',
       {
@@ -52,6 +76,11 @@ class Client {
     );
 
     if (response.data) {
+      this.tokenCache = {
+        lastFetch: Date.now(),
+        data: response.data,
+      };
+
       return response.data.accessToken;
     }
 
@@ -59,6 +88,7 @@ class Client {
   }
 
   async getStations() {
+    await this.#auth();
     const res = await axios.get<Asema[]>(`/stations`, {
       headers: {
         'x-access-token': this.token,
@@ -77,6 +107,7 @@ class Client {
   ): Promise<Asema[]> {
     if (!location || isNaN(location.lat) || isNaN(location.lat)) throw new Error('Ei sijaintia');
     if (isNaN(distance)) throw new Error('Etäisyys ei ole numero haloo');
+    await this.#auth();
 
     const res = await axios.get<Asema[]>(
       `/stations?location=${location.lon},${location.lat}&distance=${distance}`,
@@ -96,6 +127,8 @@ class Client {
 
   async getStation(stationId: string, date: Duration = { days: 14 }): Promise<Asema> {
     if (!stationId) throw new Error('stationId puuttuu');
+    await this.#auth();
+
     const since = sub(new Date(), date);
 
     const res = await axios.get<Asema>(`/stations/${stationId}/prices?since=${since}`, {
@@ -119,6 +152,7 @@ class Client {
     const token = await this.#getRefreshToken(loginOptions);
     const accessToken = await this.#getSessionToken(token);
     this.token = accessToken;
+    this.refreshToken = token.refreshToken;
 
     return accessToken;
   }
