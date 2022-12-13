@@ -87,12 +87,14 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="client.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="client.html#token" class="tsd-kind-icon">token</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="client.html#_auth" class="tsd-kind-icon">#auth</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="client.html#_getrefreshtoken" class="tsd-kind-icon">#get<wbr>Refresh<wbr>Token</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="client.html#_getsessiontoken" class="tsd-kind-icon">#get<wbr>Session<wbr>Token</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client.html#getstation" class="tsd-kind-icon">get<wbr>Station</a></li>
@@ -101,11 +103,12 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client.html#login" class="tsd-kind-icon">login</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Object literals</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-private"><a href="client.html#headers" class="tsd-kind-icon">headers</a></li>
 								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-private"><a href="client.html#options" class="tsd-kind-icon">options</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="client.html#tokencache" class="tsd-kind-icon">token<wbr>Cache</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,19 +120,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Client<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ClientOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="client.html" class="tsd-signature-type">Client</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Client<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../globals.html#clientoptions" class="tsd-signature-type">ClientOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="client.html" class="tsd-signature-type">Client</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L18">lib/client.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L24">lib/client.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">ClientOptions</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../globals.html#clientoptions" class="tsd-signature-type">ClientOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="client.html" class="tsd-signature-type">Client</a></h4>
@@ -140,12 +143,22 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="refreshtoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> refresh<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">refresh<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L8">lib/client.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="token" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> token</h3>
 					<div class="tsd-signature tsd-kind-icon">token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L7">lib/client.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L7">lib/client.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -153,25 +166,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_getrefreshtoken" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> #get<wbr>Refresh<wbr>Token</h3>
+					<a name="_auth" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> #auth</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">#get<wbr>Refresh<wbr>Token<span class="tsd-signature-symbol">(</span>loginOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LoginOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">RefreshToken</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">#auth<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L32">lib/client.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L38">lib/client.ts:38</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_getrefreshtoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> #get<wbr>Refresh<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">#get<wbr>Refresh<wbr>Token<span class="tsd-signature-symbol">(</span>loginOptions<span class="tsd-signature-symbol">: </span><a href="../globals.html#loginoptions" class="tsd-signature-type">LoginOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#refreshtoken" class="tsd-signature-type">RefreshToken</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L50">lib/client.ts:50</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>loginOptions: <span class="tsd-signature-type">LoginOptions</span></h5>
+									<h5>loginOptions: <a href="../globals.html#loginoptions" class="tsd-signature-type">LoginOptions</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">RefreshToken</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#refreshtoken" class="tsd-signature-type">RefreshToken</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -185,7 +215,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L45">lib/client.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L63">lib/client.ts:63</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -207,13 +237,13 @@
 					<a name="getstation" class="tsd-anchor"></a>
 					<h3>get<wbr>Station</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Station<span class="tsd-signature-symbol">(</span>stationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, date<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Duration</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Asema</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Station<span class="tsd-signature-symbol">(</span>stationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, date<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Duration</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/asema.html" class="tsd-signature-type">Asema</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L97">lib/client.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L128">lib/client.ts:128</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -225,7 +255,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> date: <span class="tsd-signature-type">Duration</span><span class="tsd-signature-symbol"> = { days: 14 }</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Asema</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/asema.html" class="tsd-signature-type">Asema</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -233,16 +263,16 @@
 					<a name="getstations" class="tsd-anchor"></a>
 					<h3>get<wbr>Stations</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stations<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Asema</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stations<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/asema.html" class="tsd-signature-type">Asema</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L61">lib/client.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L90">lib/client.ts:90</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Asema</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/asema.html" class="tsd-signature-type">Asema</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -250,13 +280,13 @@
 					<a name="getstationsbylocation" class="tsd-anchor"></a>
 					<h3>get<wbr>Stations<wbr>ByLocation</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stations<wbr>ByLocation<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>lat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>lon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, distance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Asema</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stations<wbr>ByLocation<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>lat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>lon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, distance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/asema.html" class="tsd-signature-type">Asema</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L74">lib/client.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L104">lib/client.ts:104</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -276,7 +306,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> distance: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 15000</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Asema</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/asema.html" class="tsd-signature-type">Asema</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -284,19 +314,19 @@
 					<a name="login" class="tsd-anchor"></a>
 					<h3>login</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">login<span class="tsd-signature-symbol">(</span>loginOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LoginOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">login<span class="tsd-signature-symbol">(</span>loginOptions<span class="tsd-signature-symbol">: </span><a href="../globals.html#loginoptions" class="tsd-signature-type">LoginOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L113">lib/client.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L146">lib/client.ts:146</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>loginOptions: <span class="tsd-signature-type">LoginOptions</span></h5>
+									<h5>loginOptions: <a href="../globals.html#loginoptions" class="tsd-signature-type">LoginOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -304,7 +334,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Object literals</h2>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
 					<a name="headers" class="tsd-anchor"></a>
@@ -312,7 +342,7 @@
 					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L14">lib/client.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L20">lib/client.ts:20</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -321,7 +351,7 @@
 						<div class="tsd-signature tsd-kind-icon">Content-<wbr><wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;application/json&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L17">lib/client.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L23">lib/client.ts:23</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -331,7 +361,7 @@
 						<div class="tsd-signature tsd-kind-icon">Host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;api.tankille.fi&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L16">lib/client.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L22">lib/client.ts:22</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -341,7 +371,7 @@
 						<div class="tsd-signature tsd-kind-icon">User-<wbr><wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;FuelFellow/3.6.2 (Android SDK built for x86_64; Android 9)&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L15">lib/client.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L21">lib/client.ts:21</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -352,7 +382,7 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L9">lib/client.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L15">lib/client.ts:15</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -361,7 +391,7 @@
 						<div class="tsd-signature tsd-kind-icon">device<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Android SDK built for x86_64 (03280ceb8a5367a6)&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L10">lib/client.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L16">lib/client.ts:16</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -371,7 +401,37 @@
 						<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;FuelFellow/3.6.2 (Android SDK built for x86_64; Android 9)&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/268f045/src/lib/client.ts#L11">lib/client.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L17">lib/client.ts:17</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="tokencache" class="tsd-anchor"></a>
+					<h3>token<wbr>Cache</h3>
+					<div class="tsd-signature tsd-kind-icon">token<wbr>Cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L10">lib/client.ts:10</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="tokencache.data" class="tsd-anchor"></a>
+						<h3>data</h3>
+						<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = &lt;any&gt;{}</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L12">lib/client.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="tokencache.lastfetch" class="tsd-anchor"></a>
+						<h3>last<wbr>Fetch</h3>
+						<div class="tsd-signature tsd-kind-icon">last<wbr>Fetch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jeffeeeee/tankille/blob/878ee55/src/lib/client.ts#L11">lib/client.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -397,7 +457,13 @@
 								<a href="client.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="client.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="client.html#token" class="tsd-kind-icon">token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="client.html#_auth" class="tsd-kind-icon">#auth</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="client.html#_getrefreshtoken" class="tsd-kind-icon">#get<wbr>Refresh<wbr>Token</a>
@@ -423,10 +489,40 @@
 							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
 								<a href="client.html#options" class="tsd-kind-icon">options</a>
 							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="client.html#tokencache" class="tsd-kind-icon">token<wbr>Cache</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/asema.html" class="tsd-kind-icon">Asema</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/asemahinta.html" class="tsd-kind-icon">Asema<wbr>Hinta</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/asemalocation.html" class="tsd-kind-icon">Asema<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/asemaosoite.html" class="tsd-kind-icon">Asema<wbr>Osoite</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#accesscache" class="tsd-kind-icon">Access<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#clientoptions" class="tsd-kind-icon">Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#fuels" class="tsd-kind-icon">Fuels</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#loginoptions" class="tsd-kind-icon">Login<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#refreshtoken" class="tsd-kind-icon">Refresh<wbr>Token</a>
+					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#api_url" class="tsd-kind-icon">API_<wbr>URL</a>
 					</li>
@@ -449,6 +545,9 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>
