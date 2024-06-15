@@ -34,7 +34,7 @@ async function run() {
 run()
 ```
 ### Kuinka tätä käyttää:
-* Luet automaattisesti generoidut: [API dokumentaatiot](https://jeffeeeee.github.io/tankille/classes/client.html)
-* Luet [koodia](https://github.com/jeffeeeee/tankille/tree/main/src) ja selvität itse
-* Parannat itse [koodaamalla ominaisuuksia](https://github.com/jeffeeeee/tankille/fork)
-* Kysymällä [apua](https://github.com/jeffeeeee/tankille/issues/new)
+* Luet automaattisesti generoidut: [API dokumentaatiot](https://aattola.github.io/tankille/classes/client.html)
+* Luet [koodia](https://github.com/aattola/tankille/tree/main/src) ja selvität itse
+* Parannat itse [koodaamalla ominaisuuksia](https://github.com/aattola/tankille/fork)
+* Kysymällä [apua](https://github.com/aattola/tankille/issues/new)
