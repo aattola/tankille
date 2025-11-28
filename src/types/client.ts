@@ -12,17 +12,19 @@ export type RefreshToken = {
   refreshToken: string;
 };
 
-interface AsemaOsoite {
+export interface AsemaOsoite {
   street: string;
   city: string;
   zipcode: string;
   country: string;
 }
-interface AsemaLocation {
+
+export interface AsemaLocation {
   type: string;
   coordinates: number[];
 }
-interface AsemaHinta {
+
+export interface AsemaHinta {
   updated: string;
   tag: string;
   price: number;
@@ -31,7 +33,8 @@ interface AsemaHinta {
   _id: string;
 }
 
-type Fuels = '95' | '98' | 'dsl' | 'ngas' | 'bgas' | '98+' | 'dsl+' | '85' | 'hvo';
+export type Fuels = '95' | '98' | 'dsl' | 'ngas' | 'bgas' | '98+' | 'dsl+' | '85' | 'hvo';
+
 export interface Asema {
   address: AsemaOsoite;
   location: AsemaLocation;
