@@ -1,87 +1,77 @@
-import test from 'ava';
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 import { Client } from './client';
 
-let client: Client;
+describe('Client', () => {
+  let client: Client;
 
-test.serial('login', async (t) => {
-  client = new Client();
-
-  const res = await client.login({
-    email: process.env.TEST_EMAIL ?? '',
-    password: process.env.TEST_PASSWORD ?? '',
+  beforeAll(() => {
+    client = new Client();
   });
 
-  t.pass(res);
-});
-
-test.serial('try to login with wrong email', async (t) => {
-  try {
-    await client.login({
-      email: 'testinen@testi.fi',
-      password: 'testinen',
-      force: true,
-    });
-
-    t.fail();
-  } catch (err) {
-    t.pass();
-  }
-});
-
-test.serial('try to login without email & pass', async (t) => {
-  try {
-    await client.login({
-      email: '',
-      password: '',
-    });
-
-    t.fail('Allowed to login again');
-  } catch (err) {
-    t.pass();
-  }
-});
-
-test.serial('login again (no force)', async (t) => {
-  try {
-    await client.login({
+  it('logs in', async () => {
+    const res = await client.login({
       email: process.env.TEST_EMAIL ?? '',
       password: process.env.TEST_PASSWORD ?? '',
     });
 
-    t.fail('Allowed to login again');
-  } catch (err) {
-    t.pass();
-  }
-});
-
-test.serial('login again (force)', async (t) => {
-  const res = await client.login({
-    email: process.env.TEST_EMAIL ?? '',
-    password: process.env.TEST_PASSWORD ?? '',
-    force: true,
+    expect(res).toBeTruthy();
   });
 
-  t.pass(res);
-});
+  it('fails to login with wrong email', async () => {
+    await expect(
+      client.login({
+        email: 'testinen@testi.fi',
+        password: 'testinen',
+        force: true,
+      })
+    ).rejects.toBeTruthy();
+  });
 
-test('getStations', async (t) => {
-  const stations = await client.getStations();
+  it('fails to login without email & pass', async () => {
+    await expect(
+      client.login({
+        email: '',
+        password: '',
+      })
+    ).rejects.toBeTruthy();
+  });
 
-  t.true(stations.length > 1);
-});
+  it('prevents login again (no force)', async () => {
+    await expect(
+      client.login({
+        email: process.env.TEST_EMAIL ?? '',
+        password: process.env.TEST_PASSWORD ?? '',
+      })
+    ).rejects.toBeTruthy();
+  });
 
-test('getStation by id', async (t) => {
-  const station = await client.getStation('57468337076757d9a7acf610');
+  it('allows login again (force)', async () => {
+    const res = await client.login({
+      email: process.env.TEST_EMAIL ?? '',
+      password: process.env.TEST_PASSWORD ?? '',
+      force: true,
+    });
+    expect(res).toBeTruthy();
+  });
 
-  t.assert(station);
-});
+  it('fetches stations', async () => {
+    const stations = await client.getStations();
 
-test('getStationByLocation with location and radius', async (t) => {
-  const stations = await client.getStationsByLocation({ lat: 61.497941, lon: 23.764002 }, 2000);
+    expect(stations.length).toBeGreaterThan(1);
+  });
 
-  t.true(stations.length > 2);
+  it('fetches station by id', async () => {
+    const station = await client.getStation('57468337076757d9a7acf610');
+
+    expect(station).toBeTruthy();
+  });
+
+  it('fetches stations by location and radius', async () => {
+    const stations = await client.getStationsByLocation({ lat: 61.497941, lon: 23.764002 }, 2000);
+
+    expect(stations.length).toBeGreaterThan(2);
+  });
 });

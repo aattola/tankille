@@ -3,6 +3,14 @@ import { sub } from 'date-fns';
 import { axios } from '../httpClient';
 import { AccessCache, Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
 
+export const DefaultHeaders = {
+  'User-Agent':
+    'FuelFellow/3.9.19 Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.58 Mobile Safari/537.36"',
+  Host: 'api.tankille.fi',
+  'Content-Type': 'application/json',
+  'X-Requested-With': 'fi.creosys.fuelfellow',
+};
+
 class Client {
   private token = '';
   private refreshToken = '';
@@ -13,26 +21,31 @@ class Client {
   };
 
   private options: ClientOptions = {
-    device: 'Android SDK built for x86_64 (03280ceb8a5367a6)',
-    userAgent: 'FuelFellow/3.6.2 (Android SDK built for x86_64; Android 9)',
+    device: 'Android SDK built for arm64 (84a3f2b1d5e6c789)',
+    // userAgent: 'FuelFellow/3.9.19 (Android SDK built for arm64; Android 14)',
+    // Host: 'api.tankille.fi',
+    // 'Content-Type': 'application/json',
+    // 'X-Requested-With': 'fi.creosys.fuelfellow',
+    // 'Accept-Encoding': 'gzip, deflate, br',
+    // Origin: 'https://www.tankille.fi',
+    // Referer: 'https://www.tankille.fi/',
   };
 
   private headers: { [key: string]: string } = {
-    'User-Agent': 'FuelFellow/3.6.2 (Android SDK built for x86_64; Android 9)',
-    Host: 'api.tankille.fi',
-    'Content-Type': 'application/json',
+    ...DefaultHeaders,
   };
 
-  constructor(options?: ClientOptions) {
+  constructor(options?: ClientOptions, overrideHeaders?: { [key: string]: string }) {
+    this.getStations = this.getStations.bind(this);
+
     if (!options) return;
     this.options = options;
     this.token = options.token;
     if (!this.options.userAgent) return;
     this.headers = {
-      'User-Agent': this.options.userAgent,
+      ...DefaultHeaders,
+      ...(overrideHeaders || {}),
     };
-
-    this.getStations = this.getStations.bind(this);
   }
 
   async #auth() {
@@ -47,15 +60,26 @@ class Client {
     });
   }
 
-  async #getRefreshToken(loginOptions: LoginOptions): Promise<RefreshToken> {
-    const response = await axios.post<RefreshToken>(
-      '/auth/login',
-      {
-        device: this.options.device,
-        ...loginOptions,
-      },
-      { headers: this.headers }
-    );
+  async #getRefreshToken({ force, ...loginOptions }: LoginOptions): Promise<RefreshToken> {
+    const response = await axios
+      .post<RefreshToken>(
+        '/auth/login',
+        {
+          device: this.options.device,
+          ...loginOptions,
+        },
+        { headers: this.headers }
+      )
+      .catch((error) => {
+        if (error && error.response && error.response.data && error.response.data.message) {
+          if (error.response.data.message.includes('Device blacklisted')) {
+            throw new Error('Device blacklisted, please change client device option.');
+          }
+        }
+
+        // throw error to user?
+        throw error;
+      });
 
     return response.data;
   }
@@ -91,6 +115,7 @@ class Client {
     await this.#auth();
     const res = await axios.get<Asema[]>(`/stations`, {
       headers: {
+        ...this.headers,
         'x-access-token': this.token,
       },
     });
@@ -113,6 +138,7 @@ class Client {
       `/stations?location=${location.lon},${location.lat}&distance=${distance}`,
       {
         headers: {
+          ...this.headers,
           'x-access-token': this.token,
         },
       }
@@ -133,6 +159,7 @@ class Client {
 
     const res = await axios.get<Asema>(`/stations/${stationId}/prices?since=${since}`, {
       headers: {
+        ...this.headers,
         'x-access-token': this.token,
       },
     });
