@@ -3,6 +3,8 @@ import { Duration, sub } from 'date-fns';
 import { axios } from '../httpClient';
 import { AccessCache, Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
 
+export * from '../types/client';
+
 export const DefaultHeaders = {
   'User-Agent':
     'FuelFellow/3.9.19 Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.58 Mobile Safari/537.36"',
@@ -11,6 +13,35 @@ export const DefaultHeaders = {
   'X-Requested-With': 'fi.creosys.fuelfellow',
 };
 
+/**
+ * Start using package by creating a new instance of the Client class and calling the login method.
+ *
+ * ```ts
+ * const client = new Client();
+ * await client.login({
+ *   email: 'test@test.com',
+ *   password: 'testpass'
+ * });
+ * ```
+ *
+ * Then you can start using the API by calling the getStations method.
+ * ```ts
+ * const stations = await client.getStations();
+ * console.log(stations);
+ * ```
+ *
+ * You can also get a single station by calling the getStation method.
+ * ```ts
+ * const station = await client.getStation('57468337076757d9a7acf610');
+ * console.log(station);
+ * ```
+ *
+ * Checkout API documentation for more methods.
+ * @see {@link Client.getStations}
+ * @see {@link Client.getStation}
+ * @see {@link Client.getStationsByLocation}
+ * @see {@link Client.login}
+ */
 class Client {
   private token = '';
   private refreshToken = '';
@@ -170,6 +201,15 @@ class Client {
     return res.data;
   }
 
+  /**
+   * Login to the API
+   * @param {LoginOptions} loginOptions - Login options
+   * @returns {Promise<string>} Access token
+   * @throws {Error} If email or password is missing
+   * @throws {Error} If user is already logged in
+   * @throws {Error} If login fails
+   *
+   */
   async login(loginOptions: LoginOptions): Promise<string> {
     if (!loginOptions.email || !loginOptions.password)
       throw new Error('Unohdit sähköpostin tai salasanan');
