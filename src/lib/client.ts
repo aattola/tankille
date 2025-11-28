@@ -1,4 +1,4 @@
-import { sub } from 'date-fns';
+import { Duration, sub } from 'date-fns';
 
 import { axios } from '../httpClient';
 import { AccessCache, Asema, ClientOptions, LoginOptions, RefreshToken } from '../types/client';
@@ -17,7 +17,7 @@ class Client {
 
   tokenCache: AccessCache = {
     lastFetch: 0,
-    data: <any>{},
+    data: {} as { accessToken: string },
   };
 
   private options: ClientOptions = {
@@ -60,7 +60,7 @@ class Client {
     });
   }
 
-  async #getRefreshToken({ force, ...loginOptions }: LoginOptions): Promise<RefreshToken> {
+  async #getRefreshToken(loginOptions: LoginOptions): Promise<RefreshToken> {
     const response = await axios
       .post<RefreshToken>(
         '/auth/login',
