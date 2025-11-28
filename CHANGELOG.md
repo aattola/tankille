@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0 (2025-11-28)
+
+### Features
+
+* automaattinen authentikaation tarkistus beee237
+
+### Bug Fixes
+
+* homepage 2215a0d
+* **types:** login returnaa accessToken (string) 82d42ca
+* typet toimivat nyt 3d4a238
+* yarn 4, jest test & auth fixes c2a958c
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [1.2.0](https://github.com/jeffeeeee/tankille/compare/v1.1.4...v1.2.0) (2022-12-13)
