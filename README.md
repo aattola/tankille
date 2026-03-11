@@ -1,6 +1,6 @@
-# Tankille API
+# Bensalle API
 
-#### Tankille npm paketissa.
+#### Bensalle npm paketissa.
 
 ### Asentaminen:
 
@@ -17,9 +17,6 @@ yarn add @jeffe/tankille
 ```
 
 ### Käyttäminen:
-
-> Huom.
-> Tämän ohjelman käyttäminen tankille rajapintaa vasten on kielletty tankille [käyttöehtojen](https://www.tankille.fi/ehdot/) mukaisesti.
 
 ```js
 const { Client } = require('@jeffe/tankille');
@@ -42,10 +39,10 @@ run();
 
 ### Kuinka tätä käyttää:
 
-- Luet automaattisesti generoidut: [API dokumentaatiot](https://aattola.github.io/tankille/classes/Client.html)
-- Luet [koodia](https://github.com/aattola/tankille/tree/main/src) ja selvität itse
-- Parannat itse [koodaamalla ominaisuuksia](https://github.com/aattola/tankille/fork)
-- Kysymällä [apua](https://github.com/aattola/tankille/issues/new)
+- Luet automaattisesti generoidut: [API dokumentaatiot](https://aattola.github.io/bensalle/classes/Client.html)
+- Luet [koodia](https://github.com/aattola/bensalle/tree/main/src) ja selvität itse
+- Parannat itse [koodaamalla ominaisuuksia](https://github.com/aattola/bensalle/fork)
+- Kysymällä [apua](https://github.com/aattola/bensalle/issues/new)
 
 ### Julkaisu
 

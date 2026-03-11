@@ -9,7 +9,7 @@ export * from '../types/client';
 
 export const DefaultHeaders = {
   'User-Agent':
-    '@jeffe/gas Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.58 Mobile Safari/537.36"',
+    '@jeffe/bensalle Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.58 Mobile Safari/537.36"',
   'Content-Type': 'application/json',
 };
 
